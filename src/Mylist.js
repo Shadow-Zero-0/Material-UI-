@@ -72,8 +72,16 @@ const Mylist = ({ setmode, darkTheme, mode ,none}) => {
     { title: "profile", icon: <AccountBoxIcon /> },
   ];
   const theme = useTheme();
+   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isClosing, setIsClosing] = React.useState(false);
+    const handleDrawerClose = () => {
+    setIsClosing(true);
+    setMobileOpen(false);
+  };
+
   return (
     <Box className='asdasd'
+     onClose={handleDrawerClose}
       sx={{ minWidth:'222px', display: { xs: none, md: "block" }, mt: "55px", flexGrow: "1.5" ,bgcolor: theme.palette.omar.main,    height: '200rem'}}
     >
       <List sx={{position:'fixed'}} >
